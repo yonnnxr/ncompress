@@ -1,5 +1,5 @@
 # GitHub actions workflow.
-# https://help.github.com/en/actions/automating-your-workflow-with-github-actions/workflow-syntax-for-github-actions
+# https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
 
 name: Build+Test CI
 
@@ -24,7 +24,7 @@ jobs:
     env:
       CC: ${{ matrix.cc }}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
     - run: make
     - run: make check
     - run: make install DESTDIR="${PWD}/root/"
@@ -41,7 +41,7 @@ jobs:
       run:
         shell: bash
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
     - name: compile
       run:
         /c/msys64/${SUBDIR}/bin/clang.exe

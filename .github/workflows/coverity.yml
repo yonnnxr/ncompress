@@ -1,5 +1,5 @@
 # GitHub actions workflow.
-# https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions
+# https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
 
 # https://scan.coverity.com/projects/vapier-ncompress
 name: Coverity Scan
@@ -12,7 +12,7 @@ jobs:
   coverity:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
     - uses: vapier/coverity-scan-action@v1
       with:
         email: ${{ secrets.COVERITY_SCAN_EMAIL }}
